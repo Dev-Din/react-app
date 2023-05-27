@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
     <h1>Footer</h1>
-    <h3>&copy; {thisYear.getFullYear()}</h3>
+    <h3>Copyright &copy;{thisYear.getFullYear()}</h3>
     </>    
    )
 }

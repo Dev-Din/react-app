@@ -1,0 +1,19 @@
+nav{
+ background-color: #333;
+}
+ul{
+ display: inline-flex;
+ gap: 2vw;
+
+}
+ul li{
+  list-style: none;
+  display: inline-flex;
+  padding: 0 1vw 0 0;
+}
+
+ul li a{
+  text-decoration: none; 
+  font-size: 1.3vw;
+  color: whitesmoke;
+}
