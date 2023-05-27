@@ -15,13 +15,14 @@ function Header() {
     return `${day}/${month}/${year}`;
   }
 
-  const handleTime = () =>{
+  const handleTime = () => {
     const time = new Date();
-    const hour = time.getHours();
-    const minute = time.getMinutes();
+    const hour = time.getHours().toString().padStart(2, '0');
+    const minute = time.getMinutes().toString().padStart(2, '0');
     return `${hour}:${minute}`;
   }
   
+   
   return (
     <header>
       <h1>{handleTime()} {handleDate()}</h1>
