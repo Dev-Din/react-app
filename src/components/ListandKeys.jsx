@@ -23,7 +23,7 @@ function ListandKeys() {
 
   // Map over the array
   const userMap = users.map((user , index) =>{
-     return <li key={index}>{index} => {user.name} {user.age} </li>
+     return <li key={index}>{index} {user.name} {user.age} </li>
   })
 // console.log(users)
 
