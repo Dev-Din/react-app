@@ -1,9 +1,11 @@
 nav{
- background-color: #333;
+  margin-top: 1vw;
+  background-color: #333;
 }
 ul{
  display: inline-flex;
  gap: 2vw;
+ justify-content: space-around;
 
 }
 ul li{
@@ -16,4 +18,13 @@ ul li a{
   text-decoration: none; 
   font-size: 1.3vw;
   color: whitesmoke;
+}
+.calendar{
+  display: flex;
+  justify-content: space-between;
+  margin: -1vw 1vw;
+}
+
+.greetings{
+  margin-top: -5vw;
 }
