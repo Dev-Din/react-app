@@ -22,9 +22,17 @@ ul li a{
 .calendar{
   display: flex;
   justify-content: space-between;
-  margin: -1vw 1vw;
+  margin: 0 1vw;
 }
 
 .greetings{
   margin-top: -5vw;
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  margin-bottom: -2vw;
+}
+.greetings button{
+  height: 3vw;
+  margin-top: 1vw;
 }

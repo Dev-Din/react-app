@@ -60,10 +60,10 @@ const handleTime = () => {
 
     <div className="greetings">
     <h1>Hello { name }!</h1>
-     <button onClick={handleName}>Name Change</button>
+     <button onClick={handleName}>Change Name</button>
     </div>
-    
-     
+
+
     <nav>{ linkMap }</nav>
     </>
   )
