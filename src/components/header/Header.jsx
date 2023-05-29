@@ -1,10 +1,14 @@
+import { useState } from "react";
 import "./header.css"
 
 function Header() {
+
+  const [name, setName] = useState('Nuru')
+
   const handleName = () =>{
     const names = ["Nuru", "Moha", "Din"];
     const int = Math.floor(Math.random() *3);
-    return names[int];
+    setName( names[int] );
   }
 
   const handleDate = () => {
@@ -27,7 +31,8 @@ function Header() {
     <header>
       <h3 className="date">{handleDate()}</h3>
       <h4 className="time">{handleTime()}</h4>
-     <h1>Hello {handleName()}!</h1>
+     <h1>Hello { name }!</h1>
+     <button onClick={handleName}>Name Change</button>
     </header>
   )
 }
