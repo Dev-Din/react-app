@@ -48,7 +48,11 @@ const handleTime = () => {
 
 
  const linkMap = links.map((link) =>(
-  <ul><li key={link.link}><a href={link.link}> {link.name}</a></li></ul>
+  <ul>
+    <li key={link.link}>
+      <a href={link.link}> {link.name}</a>
+    </li>
+    </ul>
  ))
   return (
     <>
