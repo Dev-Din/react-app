@@ -7,14 +7,14 @@ function Header() {
     return names[int];
   }
 
-  const handleDate = () =>{
+  const handleDate = () => {
     const date = new Date();
     const day = date.getDate();
-    const month = date.getMonth();
+    const month = date.toLocaleString('default', { month: 'short' });
     const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
-
+    return `${day} ${month}, ${year}`;
+  };
+  
   const handleTime = () => {
     const time = new Date();
     const hour = time.getHours().toString().padStart(2, '0');
@@ -25,7 +25,8 @@ function Header() {
    
   return (
     <header>
-      <h1>{handleTime()} {handleDate()}</h1>
+      <h3 className="date">{handleDate()}</h3>
+      <h4 className="time">{handleTime()}</h4>
      <h1>Hello {handleName()}!</h1>
     </header>
   )
