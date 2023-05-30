@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import "./content.css"
-import { FaTrashAlt } from 'react-icons/fa'
+import "./content.css";
+import { FaTrashAlt } from 'react-icons/fa';
 function Content() {
 
   const [items, setItems] = useState([
@@ -38,7 +38,7 @@ function Content() {
            <FaTrashAlt
             role='button'
             tabIndex={0}
-            />
+          />
         </li>
       ))}
      </ul>
