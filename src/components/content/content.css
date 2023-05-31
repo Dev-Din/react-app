@@ -1,7 +1,7 @@
 main{
  display: flex;
  justify-content: center;
- align-items: center;
+ /* align-items: center; */
  height: 100vh;
 }
 
@@ -51,6 +51,7 @@ ul li::before {
 .item > label {
  font-size: 2vw;
  flex-grow: 1;
+ left: 0;
 }
 
 .item svg {

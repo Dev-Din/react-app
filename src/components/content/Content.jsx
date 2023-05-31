@@ -16,32 +16,61 @@ function Content() {
     }, {
       id: 3,
       checked: false,
-      item: "Item 1"
+      item: "Item 3"
     }, {
       id: 4,
       checked: false,
-      item: "Item 1"
+      item: "Item 4"
     },
   ]);
 
+  const handleCheck = (id) =>{
+    // console.log(`key: ${id}`)
+    // console.log(`value: ${items[id].checked}`)
+    // console.log(`items: ${items}`)
+    const listItems = items.map((item) => {
+      if(item.id === id){
+        item.checked =!item.checked
+      }
+      return item
+    })
+    setItems(listItems)
+    localStorage.setItem('shoppingList',JSON.stringify(listItems))
+  }
 
+  const handleDelete = (id) =>{
+    // console.log(id)
+    const listItems = items.filter((item) => item.id !== id ? item : null)
+    setItems(listItems)
+    localStorage.setItem('shoppingList',JSON.stringify(listItems))
+  }
 
   return (
     <main>
+      {items.length ?(
      <ul>
       {items.map((item) =>(
         <li className='item' key={item.id}>
           <input type="checkbox"
+            onChange={() => handleCheck(item.id) }
             checked = {item.checked}
            />
-           <label>{item.item}</label>
+           <label
+            style={(item.checked) ? {textDecoration: "line-through"} : null}
+           >{item.item}
+            </label>
            <FaTrashAlt
+            onClick ={() => handleDelete(item.id )}
             role='button'
             tabIndex={0}
           />
         </li>
       ))}
      </ul>
+
+      ) : (
+        <h1 style={{ marginTop: '2rem'}}>You have no items</h1>
+      )}
     </main>
   )
 }
