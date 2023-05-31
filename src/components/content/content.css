@@ -1,77 +1,62 @@
-main{
- display: flex;
- justify-content: flex-start;
- /* align-items: center; */
- height: 100vh;
+main {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.centered{
- margin-top: 2rem;
- color: #ff0000;
- padding-left: 38vw;
-  /* justify-content: center; */
+.list {
+  list-style-type: none;
+  padding: 0 30vw;
 }
 
-ul {
- width: 100%;
- list-style: none;
- padding: 0 10vw 1vw;
+.card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5vw;
+  padding: 2vw;
+  background-color: #f7f7f7;
+  border-radius: 5px;
 }
 
-ul li{
- color: #333;
+.card :last-child{
+  margin-bottom: 0;  
 }
 
-ul li::before {
- content: "\200B";
+.card-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.card-content input[type="checkbox"] {
+  transform: scale(2); /* Increase the scale value to make it bigger */
+  margin-right: 10px; /* Add some margin for spacing */
 }
 
-.item {
- display: flex;
- justify-content: flex-start;
- align-items: center;
- padding: 0.5rem 0 0.5rem 0.5rem;
- margin: 0.25rem 0;
- background-color: whitesmoke;
+.card-content label {
+  flex: 1;
+  text-align: center; /* Add this line to align the label in the center */
+  font-size: 2vw;
 }
 
-.item:first-child {
- margin: 0;
+
+.item-checked {
+  text-decoration: line-through;
 }
 
-.item input[type="checkbox"] {
- text-align: center;
- width: 2.5rem;
- width: 48px;
- min-width: 48px;
- height: 2.5rem;
- height: 48px;
- min-height: 48px;
- cursor: pointer;
- margin-right: 0.5rem;
+.delete-btn {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 2vw;
+  color: green;
+
 }
 
-.item input[type="checkbox"]:focus + label {
- text-decoration: underline;
+.delete-btn:hover {
+  color: red;
 }
 
-.item > label {
- font-size: 2vw;
- flex-grow: 1;
- left: 0;
-}
-
-.item svg {
- width: 48px;
- min-width: 48px;
- height: 36px;
- font-size: 1rem;
- color: green;
- cursor: pointer;
-}
-
-.item svg:focus, 
-.item svg:hover {
- color: red;
- outline: none;
+.centered {
+  text-align: center;
 }

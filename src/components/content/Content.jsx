@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import "./content.css";
 import { FaTrashAlt } from 'react-icons/fa';
+
 function Content() {
 
   const [items, setItems] = useState([
@@ -24,55 +25,57 @@ function Content() {
     },
   ]);
 
-  const handleCheck = (id) =>{
-    // console.log(`key: ${id}`)
-    // console.log(`value: ${items[id].checked}`)
-    // console.log(`items: ${items}`)
-    const listItems = items.map((item) => {
-      if(item.id === id){
-        item.checked =!item.checked
+  const handleCheck = (id) => {
+    const updatedItems = items.map((item) => {
+      if (item.id === id) {
+        item.checked = !item.checked;
       }
-      return item
-    })
-    setItems(listItems)
-    localStorage.setItem('shoppingList',JSON.stringify(listItems))
+      return item;
+    });
+    setItems(updatedItems);
+    localStorage.setItem('shoppingList', JSON.stringify(updatedItems));
   }
 
-  const handleDelete = (id) =>{
-    // console.log(id)
-    const listItems = items.filter((item) => item.id !== id ? item : null)
-    setItems(listItems)
-    localStorage.setItem('shoppingList',JSON.stringify(listItems))
+  const handleDelete = (id) => {
+    const updatedItems = items.filter((item) => item.id !== id);
+    setItems(updatedItems);
+    localStorage.setItem('shoppingList', JSON.stringify(updatedItems));
   }
 
   return (
-    <main>
-      {items.length ?(
-     <ul>
-      {items.map((item) =>(
-        <li className='item' key={item.id}>
-          <input type="checkbox"
-            onChange={() => handleCheck(item.id) }
-            checked = {item.checked}
-           />
-           <label
-            style={(item.checked) ? {textDecoration: "line-through"} : null}
-           >{item.item}
-            </label>
-           <FaTrashAlt
-            onClick ={() => handleDelete(item.id )}
-            role='button'
-            tabIndex={0}
-          />
-        </li>
-      ))}
-     </ul>
-
+    <main className="centered">
+      {items.length ? (
+        <ul className="list">
+          {items.map((item) => (
+            <li className="card" key={item.id}>
+              <div className="card-content">
+                <input
+                  type="checkbox"
+                  onChange={() => handleCheck(item.id)}
+                  checked={item.checked}
+                />
+                <label
+                  className={item.checked ? "item-checked" : null}
+                >
+                  {item.item}
+                </label>
+              </div>
+              <FaTrashAlt
+                className="delete-btn"
+                onClick={() => handleDelete(item.id)}
+                role='button'
+                tabIndex={0}
+              />
+            </li>
+          ))}
+        </ul>
       ) : (
-        <h1 className='centered'>You have no items</h1>
-      )}
+          <h1 className='centered'>You have no items</h1>
+        )}
+
+      <h3>{items.length} {items.length === 1?" item left": "items left"}</h3>
     </main>
   )
 }
 
-export default Content
+export default Content;
