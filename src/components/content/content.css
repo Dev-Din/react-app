@@ -1,8 +1,15 @@
 main{
  display: flex;
- justify-content: center;
+ justify-content: flex-start;
  /* align-items: center; */
  height: 100vh;
+}
+
+.centered{
+ margin-top: 2rem;
+ color: #ff0000;
+ padding-left: 38vw;
+  /* justify-content: center; */
 }
 
 ul {

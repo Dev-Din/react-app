@@ -69,7 +69,7 @@ function Content() {
      </ul>
 
       ) : (
-        <h1 style={{ marginTop: '2rem'}}>You have no items</h1>
+        <h1 className='centered'>You have no items</h1>
       )}
     </main>
   )
