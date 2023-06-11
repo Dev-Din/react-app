@@ -48,11 +48,11 @@ const handleTime = () => {
 
 
  const linkMap = links.map((link) =>(
-  <ul>
+  
     <li key={link.link}>
       <a href={link.link}> {link.name}</a>
     </li>
-    </ul>
+    
  ))
   return (
     <>
@@ -68,7 +68,12 @@ const handleTime = () => {
     </div>
 
 
-    <nav>{ linkMap }</nav>
+    <nav>
+      <ul className='flex'>
+        { linkMap }
+       </ul>
+    </nav>
+    
     </>
   )
 }

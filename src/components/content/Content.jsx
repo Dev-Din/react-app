@@ -36,7 +36,9 @@ function Content({items, handleCheck, handleDelete, length}) {
           <h1 className='centered'>You have no items</h1>
         )}
 
-      <h3>{length} {length === 1?" item left": "items left"}</h3>
+      <h3 id="itemsLength">
+        {length} {length === 1? "item left": "items left"}
+        </h3>
     </main>
   )
 }

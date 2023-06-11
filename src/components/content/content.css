@@ -3,7 +3,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
 }
 
 .list {
@@ -59,4 +59,7 @@ main {
 
 .centered {
   text-align: center;
+}
+#itemsLength{
+  padding-bottom: 5vw;
 }
