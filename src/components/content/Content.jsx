@@ -37,7 +37,7 @@ function Content({items, handleCheck, handleDelete, length}) {
         )}
 
       <h3 id="itemsLength">
-        {length} {length === 1? "item left": "items left"}
+        {length} {length === 1? "item available": "items available"}
         </h3>
     </main>
   )
