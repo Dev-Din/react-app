@@ -1,12 +1,11 @@
 nav{
   margin-top: 1vw;
+  display: flex;
+  justify-content: space-around;
   background-color: #333;
 }
 ul.flex{
-  display: flex;
- gap: 2vw;
- justify-content: space-around;
- padding: 1.5vw 0;
+ padding: 1.5vw 10vw;
 }
 ul li{  
   list-style: none;
